@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May 10 13:11:33 2018
-
-@author: amity
-"""
-
 n=int(input("Enter number of units: "))
 if n<=100:
     a=40*n
