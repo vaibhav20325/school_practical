@@ -5,7 +5,6 @@ while a>0:
     d=a%10
     a=a//10
     rev=rev*10+d
-print (rev)
 if rev==n:
     print ("The nummber is a palindrome")
 else:
