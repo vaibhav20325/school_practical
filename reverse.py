@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 28 08:27:58 2018
-
-@author: amity
-"""
 a=int(input("Enter the number:"))
 
 sum=0
