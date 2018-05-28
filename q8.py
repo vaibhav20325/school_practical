@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May 10 13:01:29 2018
-
-@author: amity
-"""
-
 s=int(input("Enter Speed:"))
 a=str(input("Is today your birthday? (yes/no) "))
 if a=="yes":
