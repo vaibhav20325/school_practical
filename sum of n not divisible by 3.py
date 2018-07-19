@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul  6 13:19:52 2018
+
+@author: amity
+"""
+
 m=int(input("Enter the number "))
 n=int(input("Enter the number "))
 sum=0
