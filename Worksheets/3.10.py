@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul  5 13:38:12 2018
-
-@author: amity
-"""
-
+'''
+name of student who scored lowest marks
+'''
 n=int(input("Enter: "))
 low=101
 low_n="0"
