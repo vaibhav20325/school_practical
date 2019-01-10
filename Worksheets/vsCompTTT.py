@@ -90,7 +90,7 @@ while True:
     elif '' not in matrix[box_no][0]+matrix[box_no][0]+matrix[box_no][0]:
         if list(scoreCard.values()).count(char)>len(scoreCard.values())//2:
             print(char, 'Wins')
-        elif list(scoreCard.values()).count(char)=len(scoreCard.values())//2:
+        elif list(scoreCard.values()).count(char)==len(scoreCard.values())//2:
             print(char, 'Loses')
         else:
             print('Game Tied')
