@@ -94,6 +94,7 @@ while True:
             print(char, 'Loses')
         else:
             print('Game Tied')
+        break
     elif turn_no%2==0:
         print('Box already occupied')
         continue
