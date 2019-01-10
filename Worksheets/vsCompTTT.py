@@ -87,7 +87,7 @@ while True:
 
     if matrix[box_no][(num-1)//3][(num-1)%3] =='':
         matrix[box_no][(num-1)//3][(num-1)%3]=char
-    elif '' not in matrix[box_no][0]+matrix[box_no][0]+matrix[box_no][0]:
+    elif '' not in matrix[box_no][0]+matrix[box_no][1]+matrix[box_no][2]:
         if list(scoreCard.values()).count(char)>len(scoreCard.values())//2:
             print(char, 'Wins')
         elif list(scoreCard.values()).count(char)==len(scoreCard.values())//2:
