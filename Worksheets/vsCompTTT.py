@@ -92,7 +92,8 @@ while True:
     elif turn_no%2==0:
         print('Box already occupied')
         continue
-    display()
+    if turn_no%2!=0:
+        display()    
     if box_no+1 not in scoreCard and checkwin(matrix[box_no]):
         print(char,'Wins this box')
         scoreCard[box_no+1]=char
