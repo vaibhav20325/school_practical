@@ -76,9 +76,7 @@ while True:
             break
     else:
         num=random.randint(1,9)
-        if matrix[box_no][(num-1)//3][(num-1)%3] !='':
-            while matrix[box_no][(num-1)//3][(num-1)%3] !='':
-                num=random.randint(1,9)
+
     if num not in range(1,10):
         print('Number not within 1 and 9. Try Again')
         continue
@@ -90,7 +88,12 @@ while True:
     if matrix[box_no][(num-1)//3][(num-1)%3] =='':
         matrix[box_no][(num-1)//3][(num-1)%3]=char
     elif turn_no%2==0:
+        if '' not in matrix[box_no][0]+matrix[box_no][0]+matrix[box_no][0]:
+            print('Game Tied')
+            break
         print('Box already occupied')
+        continue
+    else:
         continue
     if turn_no%2!=0:
         display()    
