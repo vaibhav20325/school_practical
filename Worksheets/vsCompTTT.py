@@ -87,10 +87,14 @@ while True:
 
     if matrix[box_no][(num-1)//3][(num-1)%3] =='':
         matrix[box_no][(num-1)//3][(num-1)%3]=char
-    elif turn_no%2==0:
-        if '' not in matrix[box_no][0]+matrix[box_no][0]+matrix[box_no][0]:
+    elif '' not in matrix[box_no][0]+matrix[box_no][0]+matrix[box_no][0]:
+        if list(scoreCard.values()).count(char)>len(scoreCard.values())//2:
+            print(char, 'Wins')
+        elif list(scoreCard.values()).count(char)=len(scoreCard.values())//2:
+            print(char, 'Loses')
+        else:
             print('Game Tied')
-            break
+    elif turn_no%2==0:
         print('Box already occupied')
         continue
     else:
