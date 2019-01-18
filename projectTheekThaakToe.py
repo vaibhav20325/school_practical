@@ -1,6 +1,7 @@
 #Theek Thaak Toe
 
 import random
+import os
 #Structure
 box1=[['','',''],['','',''],['','','']]
 box2=[['','',''],['','',''],['','','']]
@@ -16,6 +17,7 @@ matrix=[box1,box2,box3,box4,box5,box6,box7,box8,box9]
 scoreCard={}
 #Defining a function to display the matrix
 def display():
+    os.system('cls')
     print(21*'--')
     for i in range(0,8,3):
         for j in range (0,3):
