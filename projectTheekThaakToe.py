@@ -1,7 +1,6 @@
 #Theek Thaak Toe
-
-import random
 import os
+import random
 #Structure
 box1=[['','',''],['','',''],['','','']]
 box2=[['','',''],['','',''],['','','']]
@@ -36,6 +35,13 @@ def display():
         print(21*'--')
     print('X: ',list(scoreCard.values()).count('X'),end='\t')
     print('O: ',list(scoreCard.values()).count('O'))
+    if num>6:
+        box_activated=num-6
+    elif num<4:
+        box_activated=num+6
+    else:
+        box_activated=num
+    print('Box active is ',box_activated)
       
 #Defining a function to check 3 chars in a row
 def checkwin(box):
@@ -60,18 +66,39 @@ def checkwin(box):
             return False
     else:
         return False
+
+def oppChar(str):
+    for i in ['X','O']:
+        if i != str:
+            return i
+            break
     
-print('Hello','\n','Rules: To play press the key on your num pad corresponding to the box')   
-display()
 box_no=4
+num=5
+box_activated=0
 turn_no=0
+symbol=''
+mode=2
+
+print('Hello','\n','Rules: To play press the key on your num pad corresponding to the box. Win 5 boxes to win ')   
+
+while mode not in [0,1]:
+    mode=int(input('Press (0) vs computer, (1) vs player, (2) vs AI: '))
+    if mode==2:
+        print('Still under development')
 
 #Actual GAME
+
+display()
+
+while symbol not in ['X','O']:
+    symbol=input('Enter Symbol (X/O): ').upper()
+
 while True:
     if turn_no%2==0:
-        char='X'
+        char=symbol
     else:
-        char='O'
+        char=oppChar(symbol)
     if turn_no%2==0:
         try:
             num=int(input('Your chance '))
@@ -95,7 +122,7 @@ while True:
         if list(scoreCard.values()).count(char)>len(scoreCard.values())//2:
             print(char, 'Wins')
         elif list(scoreCard.values()).count(char)==len(scoreCard.values())//2:
-            print(char, 'Loses')
+            print(oppChar(char), 'Loses')
         else:
             print('Game Tied')
         break
@@ -104,8 +131,9 @@ while True:
         continue
     else:
         continue
+   
     if turn_no%2!=0:
-        display()    
+        display()
     if box_no+1 not in scoreCard and checkwin(matrix[box_no]):
         print(char,'Wins this box')
         scoreCard[box_no+1]=char
