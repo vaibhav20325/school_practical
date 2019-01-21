@@ -66,7 +66,7 @@ def checkwin(box):
             return False
     else:
         return False
-
+#Defining a function to switch between X and O
 def oppChar(str):
     for i in ['X','O']:
         if i != str:
@@ -86,13 +86,12 @@ while mode not in [0,1]:
     mode=int(input('Press (0) vs computer, (1) vs player, (2) vs AI: '))
     if mode==2:
         print('Still under development')
-
+while symbol not in ['X','O']:
+    symbol=input('Enter Symbol (X/O): ').upper()
+    
 #Actual GAME
 
 display()
-
-while symbol not in ['X','O']:
-    symbol=input('Enter Symbol (X/O): ').upper()
 
 while True:
     if turn_no%2==0:
@@ -123,7 +122,7 @@ while True:
         if list(scoreCard.values()).count(char)>len(scoreCard.values())//2:
             print(char, 'Wins')
         elif list(scoreCard.values()).count(char)==len(scoreCard.values())//2:
-            print(oppChar(char), 'Loses')
+            print(oppChar(char), 'Wins')
         else:
             print('Game Tied')
         break
