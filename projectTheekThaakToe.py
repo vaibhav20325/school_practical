@@ -42,7 +42,10 @@ def display():
     else:
         box_activated=num
     print('Box active is ',box_activated)
-      
+    if turn_no%10==goodMove:
+        print('Good move')
+    
+    
 #Defining a function to check 3 chars in a row
 def checkwin(box):
     if (box[0]+box[1]+box[2]).count(char)>=3:
@@ -79,7 +82,7 @@ box_activated=0
 turn_no=0
 symbol=''
 mode=2
-
+goodMove=1
 print('Hello','\n','Rules: To play press the key on your num pad corresponding to the box. Win 5 boxes to win ')   
 
 while mode not in [0,1]:
@@ -94,6 +97,8 @@ while symbol not in ['X','O']:
 display()
 
 while True:
+    goodMove=random.randint(0,9)
+    
     if turn_no%2==0:
         char=symbol
     else:
