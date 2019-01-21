@@ -99,15 +99,16 @@ while True:
         char=symbol
     else:
         char=oppChar(symbol)
-    if turn_no%2==0:
+    
+    if mode==0 and turn_no%2 != 0:
+        num=random.randint(1,9)
+    else:
         try:
-            num=int(input('Your chance '))
+            num=int(input('Your chance: '))
         except:
             print('ERROR')
             break
-    else:
-        num=random.randint(1,9)
-
+        
     if num not in range(1,10):
         print('Number not within 1 and 9. Try Again')
         continue
@@ -126,14 +127,13 @@ while True:
         else:
             print('Game Tied')
         break
-    elif turn_no%2==0:
+    elif (turn_no%2==0 and mode==0) or mode==1:
         print('Box already occupied')
         continue
     else:
         continue
    
-    if turn_no%2!=0:
-        display()
+    display()
     if box_no+1 not in scoreCard and checkwin(matrix[box_no]):
         print(char,'Wins this box')
         scoreCard[box_no+1]=char
