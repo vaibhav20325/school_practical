@@ -44,8 +44,8 @@ def display():
     print('Box active is ',box_activated)
     if turn_no%10==goodMove:
         print('Good move')
-    
-    
+
+#credit-bhavesh jain
 #Defining a function to check 3 chars in a row
 def checkwin(box):
     if (box[0]+box[1]+box[2]).count(char)>=3:
