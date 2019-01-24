@@ -21,15 +21,9 @@ def display():
     #clears the display after every turn
     os.system('cls')
     #Title
-    print('___       __  __      ',end=' ') 
-    print('___       __   __       ',end=' ') 
-    print('___  __   __')
-    print(' |  |__| |__ |__ |_/  ',end=' ') 
-    print(' |  |__| |__| |__| |_/  ',end=' ') 
-    print(' |  |  | |__')
-    print(' |  |  | |__ |__ | \  ',end=' ') 
-    print(' |  |  | |  | |  | | \  ',end=' ') 
-    print(' |  |__| |__')
+    print('___       __  __      ','___       __   __       ','___  __   __')
+    print(' |  |__| |__ |__ |_/  ',' |  |__| |__| |__| |_/  ',' |  |  | |__')
+    print(' |  |  | |__ |__ | \  ',' |  |  | |  | |  | | \  ',' |  |__| |__')
     
     
     print(21*'--')
