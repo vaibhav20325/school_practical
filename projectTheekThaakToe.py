@@ -153,6 +153,7 @@ while True:
         print(char,'Wins this box')
         scoreCard[box_no+1]=char
         if list(scoreCard.values()).count(char)==5:
+            display()
             print(char,' Wins Congrats')
             break
     box_no=num-1
