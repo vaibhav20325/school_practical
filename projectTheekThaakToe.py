@@ -20,6 +20,18 @@ scoreCard={}
 def display():
     #clears the display after every turn
     os.system('cls')
+    #Title
+    print('___       __  __      ',end=' ') 
+    print('___       __   __       ',end=' ') 
+    print('___  __   __')
+    print(' |  |__| |__ |__ |_/  ',end=' ') 
+    print(' |  |__| |__| |__| |_/  ',end=' ') 
+    print(' |  |  | |__')
+    print(' |  |  | |__ |__ | \  ',end=' ') 
+    print(' |  |  | |  | |  | | \  ',end=' ') 
+    print(' |  |__| |__')
+    
+    
     print(21*'--')
     for i in range(0,8,3):
         for j in range (0,3):
