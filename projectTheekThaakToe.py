@@ -1,6 +1,7 @@
 #Theek Thaak Toe
 import os
 import random
+
 #Structure
 box1=[['','',''],['','',''],['','','']]
 box2=[['','',''],['','',''],['','','']]
@@ -14,8 +15,10 @@ box9=[['','',''],['','',''],['','','']]
 
 matrix=[box1,box2,box3,box4,box5,box6,box7,box8,box9]
 scoreCard={}
+
 #Defining a function to display the matrix
 def display():
+    #clears the display after every turn
     os.system('cls')
     print(21*'--')
     for i in range(0,8,3):
@@ -42,10 +45,11 @@ def display():
     else:
         box_activated=num
     print('Box active is ',box_activated)
+    
     if turn_no%10==goodMove:
         print('Good move')
-
-#credit-bhavesh jain
+    
+    
 #Defining a function to check 3 chars in a row
 def checkwin(box):
     if (box[0]+box[1]+box[2]).count(char)>=3:
@@ -112,10 +116,11 @@ while True:
         except:
             print('ERROR')
             break
-        
+            #will end the game if the input is not an integer
     if num not in range(1,10):
         print('Number not within 1 and 9. Try Again')
         continue
+    #to match with the numbering on numpad
     if num in (7,8,9):
         num-=6
     elif num in (1,2,3):
@@ -146,3 +151,4 @@ while True:
             break
     box_no=num-1
     turn_no+=1
+#credit-Bhavesh Jain
