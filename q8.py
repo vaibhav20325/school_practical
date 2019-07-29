@@ -1,5 +1,5 @@
-l1=[2,2,3,0]
-l2=[2,2,3,0]
+l1=[int(x) for x in input("Enter number: ").split(",") if x.isdigit()]
+l2=[int(x) for x in input("Enter number: ").split(",") if x.isdigit()]
 
 def merge(list1,list2, distinct = False):
     list3 = list1 + list2
@@ -31,6 +31,6 @@ def isCircular(list1,list2):
             break
     return cond
 
-print(commonSum(l1,l2))
-print(merge(l1,l2))
-print(isCircular(l1,l2))
+print("Merged list:", merge(l1,l2))
+print("Sum of common elements:", commonSum(l1,l2))
+print("Circularly identical:", isCircular(l1,l2))
