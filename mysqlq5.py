@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct 30 10:15:36 2019
+Created on Wed Oct 30 19:19:58 2019
 
-@author: scl
+@author: RajeevKumar
 """
 
 from tkinter import*
@@ -11,14 +11,14 @@ from tkinter import messagebox
 
 import mysql.connector
 connection = mysql.connector.connect(host='localhost',
-                                   database='database1',
+                                   database='q5',
                                    user='root',
-                                   password='amity')
+                                   password='abcd')
 
 cursor = connection.cursor()
 x=(0)
 window=Tk()
-window.geometry('310x310')
+window.geometry('240x310')
 Label(window,text='BUS').grid(column=0,row=0)
 a=('1','','','','')  
 b=IntVar()
@@ -42,22 +42,27 @@ def insert_click():
     query = "INSERT INTO BUS values('%d', '%s', '%s', '%d', '%d');" % (b,o,d,r,k)
     cursor.execute(query)
     connection.commit()
-
+n=1
 def display():
-    global a
-    query = "Select * from BUS;"
-    cursor.execute(query)
-    
+    global a,n
+    if n==1:
+        query = "Select * from BUS;"
+        cursor.execute(query)
+    n=n+1
     a=cursor.fetchone()
-    print(a,'\n','\n')
+    Label(window,text='BusNo: ').grid(column=0,row=11)
+    l1=Label(window,text=str(a[0])).grid(column=1,row=11)
+    Label(window,text='Origin: ').grid(column=0,row=12)
+    l2=Label(window,text=str(a[1])).grid(column=1,row=12)
+    Label(window,text='Dest: ').grid(column=0,row=13)
+    l3=Label(window,text=str(a[2])).grid(column=1,row=13)
+    Label(window,text='Rate: ').grid(column=0,row=14)
+    l4=Label(window,text=str(a[3])).grid(column=1,row=14)
+    Label(window,text='Km: ').grid(column=0,row=15)
+    l5=Label(window,text=str(a[4])).grid(column=1,row=15)
 
-Label(window,text='BusNo'+str(a[0])).grid(column=0,row=12)
-Label(window,text='Origin'+str(a[1])).grid(column=0,row=13)
-Label(window,text='Dest'+str(a[2])).grid(column=0,row=14)
-Label(window,text='Rate'+str(a[3])).grid(column=0,row=15)
-Label(window,text='Km'+str(a[4])).grid(column=0,row=16)
 Button(window,text='Create New Record', command = insert_click).grid(column=0,row=8)
-Button(window,text='Show Next Record', command = display).grid(column=0 , row=9)
-Button(window,text='Exit', command = window.destroy).grid(column=0 , row=10)
+Button(window,text='Show Next Record', command = display).grid(column=0 , row=17)
+Button(window,text='Exit', command = window.destroy).grid(column=1 , row=17)
 
 window.mainloop()
